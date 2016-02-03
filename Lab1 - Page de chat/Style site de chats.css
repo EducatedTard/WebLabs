@@ -1,0 +1,112 @@
+body{
+    padding-top: 50px;
+    margin: 0 auto;
+    background-color: rgba(235, 250, 255, 1);
+}
+
+h1{
+    display: inline;
+}
+
+div{
+    display: block;
+    margin:0 ;
+}
+
+@font-face {
+    font-family: 'Arvo', serif;
+}
+
+@font-face {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+button{
+    font-family: "Lato Thin", sans-serif;
+    border-style: hidden;
+    color: #ffffff;
+    font-size: 20px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    display: block;
+    width: 170px;
+    text-align: left;
+}
+
+.btn:hover {
+    background: #b8b8b8;
+    background-image: -webkit-linear-gradient(top, #b8b8b8, #b8b8b8);
+    background-image: -moz-linear-gradient(top, #b8b8b8, #b8b8b8);
+    background-image: -ms-linear-gradient(top, #b8b8b8, #b8b8b8);
+    background-image: -o-linear-gradient(top, #b8b8b8, #b8b8b8);
+    background-image: linear-gradient(to bottom, #b8b8b8, #b8b8b8);
+    text-decoration: none;
+}
+
+.btn:focus{
+    outline: 0;
+}
+
+hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.BaseClass{
+
+}
+
+.post{
+    font-family: "Lato Thin", sans-serif;
+    margin-left: 175px;
+}
+
+.posts{
+    max-width: 600px;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.postTitle{
+    font-size: 30px;
+}
+
+.postBtn{
+    font-size: 10px;
+}
+
+.postBtn:hover{
+    color: #b8b8b8;
+}
+
+.catImage{
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 170px;
+
+    font-family: Arvo;
+    color: #FFFFFF;
+    background-color: #000000;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+#burger{
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    float: right;
+}
+
