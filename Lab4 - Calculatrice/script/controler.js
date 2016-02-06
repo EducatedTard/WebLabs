@@ -8,6 +8,27 @@ var operator = "";
 var chaining = true;
 
 
+
+function f() {
+    if (navigator.geolocation) {
+        var timeoutVal = 10 * 1000 * 1000;
+        navigator.geolocation.getCurrentPosition(
+            displayPosition
+        );
+    }
+    else {
+        alert("Geolocation is not supported by this browser");
+    }
+}
+function displayPosition(position) {
+
+    $("#position").html("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude);
+
+}
+
+
+
+
 function updateScreen(){
     $("#screen").html(onScreen);
 }
@@ -173,7 +194,7 @@ $(document).ready(function(){
     });
 
     $("#geo").click(function(){
-
+        f();
     });
 
     $("#equals").click(function(){
