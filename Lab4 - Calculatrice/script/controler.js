@@ -5,20 +5,44 @@ var calcu = new calculator();
 var onScreen = "0";
 var number = 0;
 var operator = "";
+var chaining = true;
 
 
 function updateScreen(){
     $("#screen").html(onScreen);
 }
 
+function memo(){
+    if(number == 0){
+        number = calcu.memory;
+        onScreen = number;
+        updateScreen();
+    }
+    else{
+        if(onScreen != number){
+            calcu.memorize();
+        }
+        else{
+            calcu.result = number;
+            calcu.memorize();
+        }
+
+    }
+}
 function enterNewNumber(num){
+    if(!chaining ){
+        number = 0;
+        chaining  = true;
+    }
     number = number *10 + num;
     onScreen = number;
     updateScreen();
 
 }
 function enterOperator(op){
-    calcu.result = number;
+    if(chaining ){
+        calcu.result = number;
+    }
     number = 0;
     operator = op;
     onScreen = operator;
@@ -54,9 +78,11 @@ function getValue(){
         default:
             break;
     }
-    number = calcu.result;
-    onScreen = number;
+    chaining  = false;
+    onScreen = calcu.result;
+    document.getElementById("screen").style.opacity = "0";
     updateScreen();
+    $("#screen").animate({ opacity: "1" }, 300 );
 }
 
 
@@ -135,7 +161,7 @@ $(document).ready(function(){
     });
 
     $("#memory").click(function(){
-        calcu.memorize();
+        memo();
     });
 
     $("#clear").click(function(){
