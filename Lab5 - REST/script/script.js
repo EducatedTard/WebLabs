@@ -1,4 +1,4 @@
-var tasks = $("<div>", {class: "task"});
+var tasks;
 
 
 function updateDisplay(data) {
@@ -19,7 +19,7 @@ function updateTasks() {
             type: 'GET'
         })
         .done(function (data) {
-            var tasks = data.tasks;
+            tasks = data.tasks;
             document.getElementById('all-notes').innerHTML = "";
             for (var i = 0; i < tasks.length; i++) {
                 updateDisplay(tasks[i]);
@@ -29,6 +29,46 @@ function updateTasks() {
 
         });
 }
+
+/*
+ * delete!!!!!!!!!!
+ */
+$('#delete-button').click(function () {
+    $.ajax({
+            context: this,
+            url: 'http://localhost:5000/tasks',
+            contentType: 'application/json; charset=UTF-8',
+            type: 'DELETE',
+            data: {"approved": "True"}
+        })
+        .done(function (data) {
+        })
+        .fail(function (jqXHR, textStatus) {
+
+        });
+    updateTasks();
+});
+
+
+/*
+ * Change a painful task into an other one !
+ */
+$('#plus-button-2').click(function () {
+    var task_id = $('#input-box-2');
+    var task = tasks[task_id];
+    $.ajax({
+            url: 'http://localhost:5000/tasks',
+            contentType: 'application/json; charset=UTF-8',
+            type: 'PUT',
+            data: JSON.stringify(task)
+        })
+        .done(function (data) {
+        })
+        .fail(function (jqXHR, textStatus) {
+
+        });
+    updateTasks();
+});
 
 /*
  * Add a painful task that will never be done !
