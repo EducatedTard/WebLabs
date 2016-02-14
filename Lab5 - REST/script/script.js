@@ -36,7 +36,7 @@ function updateTasks() {
 $('#delete-button').click(function () {
     $.ajax({
             context: this,
-            url: 'http://localhost:5000/tasks',
+            url: 'http://localhost:5000/tasks/' + $('#input-id-2').val(),
             contentType: 'application/json; charset=UTF-8',
             type: 'DELETE',
             data: {"approved": "True"}
@@ -44,7 +44,7 @@ $('#delete-button').click(function () {
         .done(function (data) {
         })
         .fail(function (jqXHR, textStatus) {
-
+            alert("This id does not exist.")
         });
     updateTasks();
 });
@@ -54,10 +54,12 @@ $('#delete-button').click(function () {
  * Change a painful task into an other one !
  */
 $('#plus-button-2').click(function () {
-    var task_id = $('#input-box-2');
-    var task = tasks[task_id];
+    var task = {
+        "task": $('#input-task').val(),
+        "id": $('#input-id').val()
+    }
     $.ajax({
-            url: 'http://localhost:5000/tasks',
+            url: 'http://localhost:5000/tasks/' + $('#input-id').val(),
             contentType: 'application/json; charset=UTF-8',
             type: 'PUT',
             data: JSON.stringify(task)
@@ -65,7 +67,7 @@ $('#plus-button-2').click(function () {
         .done(function (data) {
         })
         .fail(function (jqXHR, textStatus) {
-
+            alert("This id does not exist.")
         });
     updateTasks();
 });
@@ -87,7 +89,7 @@ $('#plus-button').click(function () {
         .done(function (data) {
         })
         .fail(function (jqXHR, textStatus) {
-
+            alert("Server is not responding.")
         });
     updateTasks();
 });
