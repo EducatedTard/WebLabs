@@ -1,0 +1,10 @@
+<% _.each(Posts, function(post){ %>
+    <tr>
+        <td>
+            <%= post.get('id') %>
+        </td>
+        <td>
+            <%= post.get('task') %>
+        </td>
+    </tr>
+<% }); %>
