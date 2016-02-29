@@ -8,7 +8,7 @@ var Postits = Backbone.View.extend({
         var posts = new Posts();
         posts.fetch({
             success: function(posts){
-                var template = _.template($('#posts').html(), {posts: posts.models});
+                var template = _.template($('#posts').html(), {posts: Posts.models});
                 that.$el.html(template);
             }
         });
@@ -16,10 +16,3 @@ var Postits = Backbone.View.extend({
     }
 });
 
-var Posts = Backbone.Collection.extend({
-   url: '/tasks'
-});
-
-var Post = Backbone.Model.extend({
-    urlRoot: '/tasks'
-});
