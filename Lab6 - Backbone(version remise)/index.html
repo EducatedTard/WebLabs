@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pense-Bête</title>
+</head>
+<body>
+    <h1>Pense-Bête</h1>
+    <div class="task-list"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+
+    <script type="text/template" id="task-list-template">
+        <% _.each(tasks, function(task){ %>
+            <div>
+                <div>
+                    id:<%= task.get('id') %>
+                </div>
+                <div>
+                    message:<%= task.get('task') %>
+                </div>
+            </div>
+        <% }); %>
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
