@@ -23,7 +23,7 @@ var ForecastModel = Backbone.Model.extend({
             city: location.city,
             weekday: day.date.weekday,
             condition: day.conditions,
-            icon: day.icon,
+            icon_url: day.icon_url,
             high: day.high.celsius,
             low: day.low.celsius
         }

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="402277fb-f2f8-42e1-b5ec-641bca589d5b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab7- Meteo/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab7- Meteo/script.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab6 - Backbone(version remise)/index.html" afterPath="$PROJECT_DIR$/Lab6 - Backbone(version remise)/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab7- Meteo/script.js" afterPath="$PROJECT_DIR$/Lab7- Meteo/script.js" />
     </list>
     <ignored path="WebLabs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,8 +48,8 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lab7- Meteo/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58577406">
-              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.50209206">
+              <caret line="36" column="27" selection-start-line="34" selection-start-column="8" selection-end-line="36" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -573,8 +569,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lab7- Meteo/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58577406">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.50209206">
+          <caret line="36" column="27" selection-start-line="34" selection-start-column="8" selection-end-line="36" selection-end-column="27" />
           <folding />
         </state>
       </provider>
