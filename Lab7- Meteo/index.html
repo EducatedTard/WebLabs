@@ -10,6 +10,19 @@
 </head>
 <body>
 <h1>Meteo</h1>
+
+<script type="text/template" id="forecast-template">
+    <% _.each(ForecastModel, function(model){ %>
+    <div>
+        <div>
+            Jour:<%= model.get('weekday') %>
+        </div>
+    </div>
+    <% }); %>
+    console.log("ok");
+</script>
+
+
 <script src="script.js"></script>
 </body>
 </html>
