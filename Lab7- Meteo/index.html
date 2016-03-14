@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meteo</title>
@@ -12,16 +13,29 @@
 <h1>Meteo</h1>
 
 <script type="text/template" id="forecast-template">
-    <% _.each(ForecastModel, function(model){ %>
-    <div>
+    <% _.each(collection, function(model){ %>
+    <div class="day">
         <div>
-            Jour:<%= model.get('weekday') %>
+            <%= model.weekday %>
+        </div>
+        <div>
+            <%= model.condition %>
+        </div>
+        <img src="<%= model.icon_url %>">
+        <div>
+            <span>
+                <%= model.high %> |
+            </span>
+            <span>
+                <%= model.low %>
+            </span>
         </div>
     </div>
     <% }); %>
-    console.log("ok");
+
 </script>
 
+<div id="forecast"></div>
 
 <script src="script.js"></script>
 </body>

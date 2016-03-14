@@ -35,6 +35,8 @@ var ForecastCollection = Backbone.Collection.extend({
 
 
 var ForecastView = Backbone.View.extend({
+    template: _.template($('#forecast-template').html()),
+    el: $('#forecast'),
     initialize: function () {
         _.bindAll(this, 'render');
         this.collection = new ForecastCollection();
@@ -44,10 +46,8 @@ var ForecastView = Backbone.View.extend({
         this.collection.fetch();
     },
     render: function () {
-        console.log(this.collection.toJSON())
-        var template = _.template($('#forecast-template').html());
-        var compiledTemplate = template({collection: this.collection.models});
-        this.$el.html(compiledTemplate);
+        console.log(this.collection.toJSON());
+        this.$el.html(this.template({collection: this.collection.toJSON()}));
     }
 });
 
