@@ -4,7 +4,7 @@ var id = 0;
 module.exports = {
     getTasks: function(app){
         app.get('/tasks', function (req, res) {
-            res.send(tasks);
+            res.send({"tasks": tasks});
         });
     },
     postTask: function(app){
