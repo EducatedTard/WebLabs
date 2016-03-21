@@ -14,7 +14,7 @@ function updateDisplay(data) {
 
 function updateTasks() {
     $.ajax({
-            url: 'http://localhost:5000/tasks',
+            url: 'localhost:3000/tasks',
             contentType: 'application/json; charset=UTF-8',
             type: 'GET'
         })
@@ -36,7 +36,7 @@ function updateTasks() {
 $('#delete-button').click(function () {
     $.ajax({
             context: this,
-            url: 'http://localhost:5000/tasks/' + $('#input-id-2').val(),
+            url: 'localhost:3000/tasks/' + $('#input-id-2').val(),
             contentType: 'application/json; charset=UTF-8',
             type: 'DELETE',
             data: {"approved": "True"}
@@ -59,7 +59,7 @@ $('#plus-button-2').click(function () {
         "id": $('#input-id').val()
     }
     $.ajax({
-            url: 'http://localhost:5000/tasks/' + $('#input-id').val(),
+            url: 'localhost:3000/tasks/' + $('#input-id').val(),
             contentType: 'application/json; charset=UTF-8',
             type: 'PUT',
             data: JSON.stringify(task)
@@ -81,7 +81,7 @@ $('#plus-button').click(function () {
     }
 
     $.ajax({
-            url: 'http://localhost:5000/tasks',
+            url: 'localhost:3000/tasks',
             contentType: 'application/json; charset=UTF-8',
             type: 'POST',
             data: JSON.stringify(task)
