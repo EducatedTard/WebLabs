@@ -41,7 +41,6 @@ def unauthorized(error):
 def forbidden(error):
     return make_response(jsonify( { 'error': 'Bad token value' } ), 403)
 
-
 @app.route('/authorize', methods = ['POST'])
 def authorize():
 	if not request.json or not 'username' in request.json or not 'password' in request.json:
