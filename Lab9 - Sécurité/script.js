@@ -12,7 +12,9 @@ $( document ).ready(function() {
                 username: $('#username-input').val(),
                 password: Base64.encode($('#password-input').val())
             })
-        }).success(function(){
+        }).success(function(data){
+            $.cookie(‘mySuperCookie’, data.token);
+            console.log(data.token);
             $('#res').text('Login successful');
         }).fail(function(){
             $('#res').text('Failed to login')
