@@ -43,13 +43,18 @@ def forbidden(error):
 
 @app.route('/authorize', methods = ['POST'])
 def authorize():
+	print "hello world"
 	if not request.json or not 'username' in request.json or not 'password' in request.json:
 		abort(400)
-
 	username = request.json['username']
 	password = request.json['password']
+
+	print username
+	print password
+
 	decoded_password = base64.b64decode(password)
 
+ 	print decoded_password
 	for user in users :
 		if user['username'] == username:
 			if user['password'] == decoded_password:
