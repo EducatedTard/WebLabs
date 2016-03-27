@@ -43,7 +43,6 @@ def forbidden(error):
 
 @app.route('/authorize', methods = ['POST'])
 def authorize():
-	print "hello world"
 	if not request.json or not 'username' in request.json or not 'password' in request.json:
 		abort(400)
 	username = request.json['username']
@@ -74,10 +73,23 @@ def is_token_valid(token):
 	else:
 		return False
 
-'''	TODO!!
 @app.route('/userprofile', methods = ['GET'])
 def get_user_profile():
-'''
+    token = request.args.get('token')
+    print(is_token_valid(token))
+
+    decoded_token = base64.b64decode(token)
+
+    for user in users :
+        if decoded_token == user['username'] + user['password']:
+            username = user['username']
+            email = user['email']
+
+    print username
+    print email
+
+    return jsonify( { 'username': username,
+                        'email': email} )
 
 if __name__ == '__main__':
     app.run(debug = True)
