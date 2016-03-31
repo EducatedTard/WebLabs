@@ -1,0 +1,15 @@
+Étape pour obtenir le corrigé :
+
+1 - Utiliser nmap pour voir qu'elle port est ouvert sur la machine cible qui roule le server
+2 - Se connecter sur la machine sur le port ciblé
+3 - Trouver le fichier package.json probalement situé au ip:port/package.json
+4 - Trouver l'emplacement du server (section script du package.json)
+5 - Trouver les autres fichiers utiles linker dans le server
+6 - Télécharger les fichier 
+
+On a maintenant le corrigé du lab !
+
+
+Antoine Grégoire-Slight
+Nathaniel Simard
+Daniel Carmichael
