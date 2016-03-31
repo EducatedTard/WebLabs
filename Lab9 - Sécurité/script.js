@@ -13,7 +13,8 @@ $(document).ready(function () {
             $.ajax({
                 type: "GET",
                 url: "http://localhost:5000/userprofile?token=" + token,
-                contentType: "application/json"
+                contentType: "application/json",
+                authorization: token
             }).success(function (data) {
                 $('#login').hide();
                 $('#page-title').text('Profile');
