@@ -1,15 +1,17 @@
 {
-  "name": "lab10",
-  "version": "1.0.0",
-  "description": "WebSockets",
-  "main": "app.js",
+  "name": "test",
+  "version": "0.0.0",
+  "description": "",
+  "main": "chatserver.js",
+  "dependencies": {
+    "express": "~4.10.2",
+    "socket.io": "~1.2.0"
+  },
+  "devDependencies": {},
   "scripts": {
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.13.4",
-    "socket.io": "^1.4.5"
-  }
+  "license": "ISC"
 }
